@@ -26,12 +26,12 @@ extras_require = {
 setup_requires = ['pytest-runner'] if {'pytest', 'test', 'ptr'}.intersection(sys.argv) else []
 
 setuptools.setup(
-    name='arkecosystem-crypto',
-    description='A simple Cryptography Implementation in Python for the Ark Blockchain.',
+    name='phantomchain-crypto',
+    description='A simple Cryptography Implementation in Python for the PHANTOM Blockchain.',
     version='0.1.1',
-    author='Ark Ecosystem',
-    author_email='info@ark.io',
-    url='https://github.com/ArkEcosystem/python-crypto',
+    author='PhantomChain',
+    author_email='info@phantom.org',
+    url='https://github.com/PhantomChain/python-crypto',
     packages=setuptools.find_packages(exclude=['tests', 'tests.*']),
     install_requires=requires,
     extras_require=extras_require,

@@ -12,7 +12,7 @@ from crypto.constants import (
     TRANSACTION_DELEGATE_REGISTRATION, TRANSACTION_MULTI_SIGNATURE_REGISTRATION,
     TRANSACTION_SECOND_SIGNATURE_REGISTRATION, TRANSACTION_VOTE
 )
-from crypto.exceptions import ArkInvalidTransaction
+from crypto.exceptions import PhantomInvalidTransaction
 from crypto.transactions.deserializer import Deserializer
 from crypto.transactions.serializer import Serializer
 from crypto.utils.message import Message
@@ -184,7 +184,7 @@ class Transaction(object):
         message = Message(transaction, self.signature, self.senderPublicKey)
         is_valid = message.verify()
         if not is_valid:
-            raise ArkInvalidTransaction('Transaction could not be verified')
+            raise PhantomInvalidTransaction('Transaction could not be verified')
 
     def second_verify(self, passphrase):
         """Verify the transaction using the 2nd passphrase
@@ -196,7 +196,7 @@ class Transaction(object):
         message = Message(transaction, self.signSignature, self.senderPublicKey)
         is_valid = message.verify()
         if not is_valid:
-            raise ArkInvalidTransaction('Transaction could not be verified')
+            raise PhantomInvalidTransaction('Transaction could not be verified')
 
     def _handle_transaction_type(self, bytes_data):
         """Handled each transaction type differently

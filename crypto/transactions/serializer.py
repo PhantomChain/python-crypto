@@ -7,7 +7,7 @@ from binary.unsigned_integer.writer import write_bit32, write_bit64, write_bit8
 
 from crypto.configuration.network import get_network
 from crypto.constants import TRANSACTION_TYPES
-from crypto.exceptions import ArkSerializerException
+from crypto.exceptions import PhantomSerializerException
 from crypto.transactions.serializers.base import BaseSerializer
 
 
@@ -17,7 +17,7 @@ class Serializer(object):
 
     def __init__(self, transaction):
         if not transaction:
-            raise ArkSerializerException('No transaction data provided')
+            raise PhantomSerializerException('No transaction data provided')
         self.transaction = transaction
 
     def serialize(self):

@@ -1,10 +1,10 @@
-class ArkCryptoException(Exception):
+class PhantomCryptoException(Exception):
     pass
 
 
-class ArkSerializerException(ArkCryptoException):
+class PhantomSerializerException(PhantomCryptoException):
     """Raised when there's a serializer related issue"""
 
 
-class ArkInvalidTransaction(ArkCryptoException):
+class PhantomInvalidTransaction(PhantomCryptoException):
     """Raised when transaction is not valid"""
